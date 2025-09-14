@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kırşehir - Hakkımızda</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="kamanfav.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-brown: #b86d4d;
+      --soft-beige: #f6f1df;
+      --hero-beige: #e9cfa2;
+      --muted-text: #7e6f60;
+      --card-shadow: rgba(22,16,13,0.06);
+      --max-w: 1060px;
+      --header-bg: url('arkagul.png');
+      --main-bg: var(--soft-beige);
+      --main-text: #2f2a25;
+      --hero-strip-bg: var(--hero-beige);
+      --logo-bg: rgba(255,255,255,0.98);
+      --pill-bg: rgba(255,255,255,0.96);
+      --pill-text: #2f2a25;
+      --card-bg: #fff;
+      --gallery-bg: #fbf6e6;
+      --quote: #cfae95;
+      --input-bg: transparent;
+      --input-text: #2f2a25;
+      --border-color: rgba(186,125,101,0.06);
+      --icon-color: #2f2a25;
+      --button-orange: #e9a15a;
+      --button-orange-dark: #a85a2f;
+      --button-orange-hover: #f3b16d;
+      --button-orange-dark-hover: #8a4420;
+      --button-text: #fff;
+      --button-inactive: #a85a2f;
+      --button-inactive-dark: #7a3b13;
+    }
+
+    body.dark {
+      --accent-brown: #b86d4d;
+      --soft-beige: #181818;
+      --hero-beige: #232323;
+      --muted-text: #bdbdbd;
+      --card-shadow: rgba(0,0,0,0.18);
+      --header-bg: url('arkagulkoyu.png');
+      --main-bg: #181818;
+      --main-text: #fff;
+      --hero-strip-bg: #232323;
+      --logo-bg: rgba(30,30,30,0.98);
+      --pill-bg: rgba(40,40,40,0.96);
+      --pill-text: #fff;
+      --card-bg: #232323;
+      --gallery-bg: #181818;
+      --quote: #b86d4d;
+      --input-bg: transparent;
+      --input-text: #fff;
+      --border-color: rgba(255,255,255,0.08);
+      --icon-color: #fff;
+      --button-orange: #e9a15a;
+      --button-orange-dark: #a85a2f;
+      --button-orange-hover: #c97b4a;
+      --button-orange-dark-hover: #8a4420;
+      --button-text: #fff;
+      --button-inactive: #7a3b13;
+      --button-inactive-dark: #3a1d08;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--main-bg);
+      color: var(--main-text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a{color:inherit}
+
+    /* HEADER */
+    .site-header{
+      position:relative;
+      width:100%;
+      height:270px;
+      background-image: var(--header-bg);
+      background-size:cover;
+      background-position:center top;
+      display:block;
+      border-bottom: 6px solid var(--accent-brown);
+      overflow:visible;
+      transition: background-image 0.3s;
+    }
+    .site-header::after{
+      content:'';
+      position:absolute; inset:0;
+      background: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03));
+      pointer-events:none;
+    }
+
+    /* Hakkımızda yazısı */
+    .ulasim-logo {
+      position: absolute;
+      top: 20px;
+      left: 32px;
+      z-index: 50;
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      color: #b43a00;
+      letter-spacing: 2px;
+      user-select: none;
+      text-shadow: 0 4px 18px rgba(180,58,0,0.13), 0 1px 0 #fff, 0 0 2px #b86d4d;
+      pointer-events: auto;
+      background: rgba(255,255,255,0.0);
+      border-radius: 8px;
+      padding: 0 14px;
+      font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    body.dark .ulasim-logo {
+      color: #b46145;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    }
+
+    /* Menü ve tema switch */
+    .menu-switch-wrap {
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--main-text);
+    }
+    .menu-btn:focus,
+    .menu-btn:hover {
+      background: rgba(0,0,0,0.07);
+      outline: none;
+    }
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 38px;
+      right: 0;
+      background: var(--logo-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+      min-width: 180px;
+      z-index: 100;
+      padding: 8px 0;
+      animation: fadeInMenu .18s;
+    }
+    @keyframes fadeInMenu {
+      from { opacity: 0; transform: translateY(-8px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .menu-dropdown.show {
+      display: block;
+    }
+    .menu-dropdown button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--main-text);
+      font-family: inherit;
+      font-size: 15px;
+      padding: 10px 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .menu-dropdown button:hover,
+    .menu-dropdown button:focus {
+      background: rgba(184,109,77,0.08);
+      outline: none;
+    }
+    .menu-dropdown .menu-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 4px 0;
+      border: none;
+    }
+    .menu-dropdown .menu-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      color: var(--icon-color);
+      transition: color 0.3s;
+    }
+
+    /* Tema Switch (iphone tarzı) */
+    .theme-switch-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font: inherit;
+      color: inherit;
+    }
+    .iphone-switch {
+      width: 46px;
+      height: 24px;
+      border-radius: 999px;
+      background: #ccc;
+      position: relative;
+      transition: background 0.3s;
+      margin-right: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid #bbb;
+      display: inline-block;
+    }
+    .iphone-switch.dark {
+      background: #444;
+      border: 1px solid #222;
+    }
+    .iphone-switch-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: left 0.3s, background 0.3s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+    .iphone-switch.dark .iphone-switch-slider {
+      left: 24px;
+      background: #222;
+    }
+    .theme-switch-label {
+      font-size: 14px;
+      color: var(--main-text);
+      opacity: 0.8;
+      min-width: 60px;
+      transition: color 0.3s;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    /* Arama kutusu ortada */
+    .header-search-center {
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      transform: translateX(-50%);
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      pointer-events: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-pill{
+      display:flex; align-items:center; gap:10px;
+      background: var(--pill-bg);
+      color: var(--pill-text);
+      padding:12px 38px;
+      border-radius:999px;
+      box-shadow:0 2px 12px var(--card-shadow);
+      min-width:340px;
+      max-width: 520px;
+      width: 100%;
+      pointer-events: auto;
+      transition: box-shadow .2s, transform .2s, background 0.3s, color 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+    .search-pill input{
+      border:0; outline:0; font-size:16px; background: var(--input-bg);
+      color: var(--input-text);
+      width:220px; min-width:120px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .search-pill svg{
+      opacity:0.85;
+      min-width:18px;
+      min-height:18px;
+      color: var(--icon-color);
+      transition: color 0.3s;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    /* Arama öneri kutusu */
+    .search-suggestions {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      background: var(--logo-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+      z-index: 10;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      max-height: 260px;
+      overflow-y: auto;
+      display: none;
+    }
+    .search-suggestions.show {
+      display: block;
+    }
+    .search-suggestions li {
+      padding: 12px 28px;
+      cursor: pointer;
+      color: var(--main-text);
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      border-bottom: 1px solid var(--border-color);
+      transition: background 0.18s;
+    }
+    .search-suggestions li:last-child {
+      border-bottom: none;
+    }
+    .search-suggestions li:hover,
+    .search-suggestions li.active {
+      background: rgba(184,109,77,0.09);
+      color: #b86d4d;
+    }
+
+    /* Logo kutucuğu (orta üstte) */
+    .logo-card{
+      position:absolute; left:50%; transform:translateX(-50%);
+      top:100px; z-index:15;
+      background: var(--logo-bg);
+      padding:18px 44px; border-radius:6px;
+      box-shadow:0 8px 26px var(--card-shadow);
+      text-align:center;
+      display:flex; flex-direction:column; align-items:center; gap:6px;
+      border:1px solid var(--border-color);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    .logo-card h1{font-family:'Great Vibes', cursive; font-size:46px; color:#b46145; margin:0}
+    .logo-card .sub{font-family:'Playfair Display', serif; font-size:11px; color:#c8a08a; letter-spacing:2px}
+
+    /* Hakkımızda içerik başlıkları ve balonları */
+    .about-section-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 80px; /* YUKARI ÇEKMEK İÇİN DEĞERİ AZALT */
+      margin-bottom: 60px;
+      padding: 0 12px;
+    }
+    .about-title {
+      font-family: 'Playfair Display', serif;
+      color: #b86d4d;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      margin-top: 0;
+      text-align: center;   /* Ortala */
+      padding-left: 0;
+    }
+    .about-bubble {
+      background: var(--logo-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(22,16,13,0.06);
+      border: 1px solid var(--border-color);
+      padding: 38px 32px 32px 32px;
+      font-size: 18px;
+      color: var(--main-text);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+      margin-bottom: 0;
+    }
+    .about-bubble ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 0;
+    }
+    .about-bubble .team-list {
+      margin-bottom: 18px;
+    }
+    .about-bubble .team-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* İsim solda, ikonlar sağda */
+    gap: 18px;
+    margin-bottom: 18px;
+    font-size: 21px; /* 1.5 katı büyüklük */
+    font-weight: 500;
+    min-height: 44px;
+    }
+
+    .about-bubble .team-icons {
+    display: flex;
+    gap: 36px; /* ikonlar arası mesafe artırıldı */
+    align-items: center;
+    justify-content: flex-end; /* ikonları sağa yasla */
+    min-width: 220px;
+    }
+
+    .about-bubble .team-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff7f1;
+    border: 2px solid #e9cfa2;
+    transition: background 0.2s, border 0.2s, transform 0.2s;
+    text-decoration: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    }
+
+    .about-bubble .team-icons a:hover {
+    background: #e9a15a;
+    border: 2px solid #b86d4d;
+    transform: scale(1.12);
+    }
+
+    .about-bubble .team-icons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    }
+
+    body.dark .about-bubble .team-icons a {
+    background: #232323;
+    border: 2px solid #444;
+    }
+    body.dark .about-bubble .team-icons a:hover {
+    background: #b46145;
+    border: 2px solid #e9a15a;
+    }
+    @media (max-width: 700px) {
+      .about-section-container {
+        margin-top: 340px;
+        gap: 18px;
+      }
+      .about-title {
+        font-size: 22px;
+        padding-left: 0;
+      }
+      .about-bubble {
+        padding: 18px 8px 18px 8px;
+        font-size: 16px;
+      }
+    }
+    .team-separator {
+  border: 0;
+  border-bottom: 2px solid #e9a15a;
+  margin: 18px 40px 18px 40px; /* üst-alt ve sağ-sol boşluk */
+  height: 0;
+}
+    /* İletişim formu stilleri */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .contact-form .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .contact-form label {
+      font-size: 15px;
+      color: #b86d4d;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px 12px;
+      border: 1.5px solid #e9a15a;
+      border-radius: 7px;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      background: #fff7f1;
+      color: #2f2a25;
+      transition: border 0.2s;
+      resize: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.5px solid #b86d4d;
+      outline: none;
+    }
+    .contact-btn {
+      background: #e9a15a;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 0;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+    }
+    .contact-btn:hover {
+      background: #b86d4d;
+    }
+    @media (max-width: 700px) {
+      .contact-form {
+        max-width: 100%;
+      }
+    }
+    body.dark .contact-form input,
+    body.dark .contact-form textarea {
+      background: #232323;
+      color: #fff;
+      border: 1.5px solid #b86d4d;
+    }
+    body.dark .contact-form label {
+      color: #e9a15a;
+    }
+    body.dark .contact-btn {
+      background: #b86d4d;
+      color: #fff;
+    }
+    body.dark .contact-btn:hover {
+      background: #e9a15a;
+      color: #232323;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sol üstte Hakkımızda -->
+  <div class="ulasim-logo">Hakkımızda</div>
+
+  <!-- Menü ve tema switch -->
+  <div class="menu-switch-wrap">
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">
+      <!-- 3 nokta SVG -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="6" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+        <circle cx="22" cy="14" r="2.5" fill="currentColor"/>
+      </svg>
+    </button>
+    <div class="menu-dropdown" id="menuDropdown" aria-label="Menü açılır">
+      <button id="themeToggleBtn" class="theme-switch-btn">
+        <span class="iphone-switch" id="iphoneSwitch">
+          <span class="iphone-switch-slider"></span>
+        </span>
+        <span class="theme-switch-label" id="themeSwitchLabel">Açık Mod</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" role="banner">
+
+    <!-- Ortada arama kutusu -->
+    <div class="header-search-center" aria-hidden="false">
+      <div class="search-pill" role="search" aria-label="Site içi arama">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="11.5" cy="11.5" r="5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input id="site-search" placeholder="Site içinde ara..." autocomplete="off" />
+        <ul class="search-suggestions" id="searchSuggestions"></ul>
+      </div>
+    </div>
+
+    <!-- Ortadaki logo kutusu -->
+    <div class="logo-card" role="img" aria-label="Kırşehir logo">
+      <h1>KIRŞEHİR</h1>
+      <div class="sub">Keşfetmenin sade güzelliği</div>
+    </div>
+
+  </header>
+
+  <!-- ======= Hakkımızda Balonları ======= -->
+  <main>
+    <div class="about-section-container">
+      <!-- Vizyonumuz başlık ve balon -->
+      <div class="about-title">Vizyonumuz</div>
+      <section class="about-bubble">
+        <p>
+          Biz, Kaman’da eğitim gören Yönetim Bilişim Sistemleri öğrencileri olarak, hem Kaman’a okumaya gelen öğrenciler hem de şehre gezi veya konaklama amaçlı ziyaret eden misafirler için eğitici, bilgilendirici ve kullanıcı dostu bir web platformu oluşturmayı hedefliyoruz. Vizyonumuz, yalnızca bir bilgi kaynağı sunmakla kalmayıp, ziyaretçilerin Kaman’ı tanımalarını, şehir içi ve şehirler arası ulaşımı kolayca planlamalarını ve şehirdeki olanaklardan en iyi şekilde faydalanmalarını sağlamaktır.
+        </p>
+        <p>
+          Sitemiz, Kaman’ı keşfetmek isteyen herkes için rehber niteliğinde olacak şekilde tasarlanmıştır. Öğrenciler, yeni yerleşim yerlerini ve üniversite ortamını daha kolay öğrenebilecek, şehir dışından gelen ziyaretçiler ise Kaman’ın tarihini, kültürünü, ulaşım seçeneklerini ve konaklama imkanlarını hızlı ve güvenilir bir biçimde görebileceklerdir.
+        </p>
+        <p>
+          Amacımız, teknolojiyi ve bilgi yönetimini kullanarak, Kaman’a dair tüm temel bilgileri bir araya toplayan ve erişimi kolay bir platform sunmaktır. Site ziyaretçilerine, ihtiyaç duydukları bilgileri hızlıca sunarken, kullanıcı deneyimini ön planda tutacak şekilde interaktif öğeler ve görsellerle desteklenmiş bir yapı sunmayı hedefliyoruz.
+        </p>
+        <p>
+          Sonuç olarak, vizyonumuz; Kaman’da yaşayan öğrenciler, şehre gelen ziyaretçiler ve potansiyel öğrenciler için bilgiye erişimi kolay, rehberlik eden ve öğretici bir dijital platform oluşturmaktır. Bu sayede hem Kaman’ın tanıtımını yapmak hem de şehre dair pratik ve güncel bilgileri sunmak istiyoruz.
+        </p>
+      </section>
+      <!-- Ekibimiz başlık ve balon -->
+      <div class="about-title">Ekibimiz ve Emeği Geçenler</div>
+      <section class="about-bubble">
+        <ul class="team-list">
+          <li>
+            Hümeyra
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Beyza
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Efsun
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>   
+          <hr class="team-separator">    
+          <li>
+            İlayda
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Berat
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Şermin
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Zümra
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Sıla
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Yağmur
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Şevket
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+          <hr class="team-separator">
+          <li>
+            Onur
+            <span class="team-icons">
+            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
+            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
+            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- İletişim Başlık ve Form -->
+      <div class="about-title">İletişim</div>
+      <section class="about-bubble">
+        <form class="contact-form" autocomplete="off">
+          <div class="form-row">
+            <label for="adsoyad">Ad Soyad</label>
+            <input type="text" id="adsoyad" name="adsoyad" required>
+          </div>
+          <div class="form-row">
+            <label for="eposta">E-posta</label>
+            <input type="email" id="eposta" name="eposta" required>
+          </div>
+          <div class="form-row">
+            <label for="mesaj">Mesajınız</label>
+            <textarea id="mesaj" name="mesaj" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Gönder</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Menü açılır kapanır ve tema değiştirici
+    (function(){
+      const menuBtn = document.getElementById('menuBtn');
+      const menuDropdown = document.getElementById('menuDropdown');
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const iphoneSwitch = document.getElementById('iphoneSwitch');
+      const themeSwitchLabel = document.getElementById('themeSwitchLabel');
+      const body = document.body;
+
+      // Tema değiştirici fonksiyonu
+      function setTheme(dark) {
+        if(dark){
+          body.classList.add('dark');
+          iphoneSwitch.classList.add('dark');
+          themeSwitchLabel.textContent = "Koyu Mod";
+          localStorage.setItem('theme', 'dark');
+        } else {
+          body.classList.remove('dark');
+          iphoneSwitch.classList.remove('dark');
+          themeSwitchLabel.textContent = "Açık Mod";
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      // Başlangıçta tema kontrolü (her zaman açık modda başlat)
+      setTheme(localStorage.getItem('theme') === 'dark');
+
+      // Menü aç/kapat
+      menuBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        menuDropdown.classList.toggle('show');
+      });
+      document.addEventListener('click', function(e){
+        if(!menuDropdown.contains(e.target) && !menuBtn.contains(e.target)){
+          menuDropdown.classList.remove('show');
+        }
+      });
+
+      // Tema değiştir butonu (iphone switch)
+      themeToggleBtn.addEventListener('click', function(e){
+        setTheme(!body.classList.contains('dark'));
+        menuDropdown.classList.remove('show');
+      });
+
+      // Klavye erişimi
+      menuBtn.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          menuDropdown.classList.toggle('show');
+        }
+      });
+      themeToggleBtn.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          setTheme(!body.classList.contains('dark'));
+          menuDropdown.classList.remove('show');
+        }
+      });
+    })();
+
+    // Arama kutusu, öneriler ve kart modalı
+    (function(){
+      // Arama önerileri
+      const search = document.querySelector('#site-search');
+      const pill = document.querySelector('.search-pill');
+      const suggestions = document.getElementById('searchSuggestions');
+      const routes = [
+        { name: "Anasayfa", url: "index.html" },
+        { name: "Yemek", url: "yemek.html" },
+        { name: "Üniversite", url: "universite.html" },
+        { name: "İlçeler", url: "ilceler.html" },
+        { name: "Kültür", url: "kultur.html" },
+        { name: "Gezilecek Yerler", url: "gezilecek-yerler.html" },
+        { name: "Ulaşım", url: "index.html" }
+      ];
+
+      let activeIndex = -1;
+
+      function showSuggestions(filter = "") {
+        const val = filter.trim().toLowerCase();
+        let filtered = routes.filter(r => r.name.toLowerCase().includes(val));
+        if (filtered.length === 0 && val.length > 0) {
+          suggestions.innerHTML = `<li style="color:#b86d4d;cursor:default;">Sonuç bulunamadı</li>`;
+        } else {
+          suggestions.innerHTML = filtered.map((r, i) =>
+            `<li data-url="${r.url}"${i === 0 ? ' class="active"' : ''}>${r.name}</li>`
+          ).join("");
+        }
+        suggestions.classList.add("show");
+        activeIndex = 0;
+      }
+
+      function hideSuggestions() {
+        suggestions.classList.remove("show");
+        activeIndex = -1;
+      }
+
+      // Arama kutusuna focus/blur
+      if(search && pill){
+        search.addEventListener('focus', ()=>{
+          pill.style.boxShadow = '0 12px 32px rgba(24,14,12,0.12)';
+          pill.style.transform = 'translateY(-1px)';
+          showSuggestions("");
+        });
+        search.addEventListener('blur', ()=>{
+          pill.style.boxShadow = '';
+          pill.style.transform = '';
+          setTimeout(hideSuggestions, 120); // tıklama için küçük gecikme
+        });
+        search.addEventListener('input', ()=>{
+          showSuggestions(search.value);
+        });
+      }
+
+      // Öneri tıklama
+      suggestions.addEventListener('mousedown', function(e){
+        if(e.target.tagName === "LI" && e.target.dataset.url){
+          window.location.href = e.target.dataset.url;
+        }
+      });
+
+      // Klavye ile seçim
+      search.addEventListener('keydown', function(e){
+        const items = Array.from(suggestions.querySelectorAll('li[data-url]'));
+        if(!suggestions.classList.contains('show') || items.length === 0) return;
+
+        if(e.key === "ArrowDown"){
+          e.preventDefault();
+          activeIndex = (activeIndex + 1) % items.length;
+          items.forEach((li,i)=>li.classList.toggle('active', i===activeIndex));
+        } else if(e.key === "ArrowUp"){
+          e.preventDefault();
+          activeIndex = (activeIndex - 1 + items.length) % items.length;
+          items.forEach((li,i)=>li.classList.toggle('active', i===activeIndex));
+        } else if(e.key === "Enter"){
+          e.preventDefault();
+          if(activeIndex >= 0 && items[activeIndex]){
+            window.location.href = items[activeIndex].dataset.url;
+          } else {
+            // Yazılan metinle eşleşen varsa ona git
+            const val = search.value.trim().toLowerCase();
+            const found = routes.find(r => r.name.toLowerCase() === val);
+            if(found) window.location.href = found.url;
+          }
+        }
+      });
+
+    })();
+  </script>
+<footer style="text-align:center; font-family: inherit; color:#ff6600; margin:40px 0;">
+  <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
+  © 2025 Tüm hakları saklıdır. Hüseyin Berat Bayram
+  <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
+</footer>
+</body>
+</html>
