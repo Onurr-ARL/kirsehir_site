@@ -6,10 +6,8 @@
   <title>Kırşehir - Hakkımızda</title>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="kamanfav.png" />
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --accent-brown: #b86d4d;
@@ -40,7 +38,6 @@
       --button-inactive: #a85a2f;
       --button-inactive-dark: #7a3b13;
     }
-
     body.dark {
       --accent-brown: #b86d4d;
       --soft-beige: #181818;
@@ -69,7 +66,6 @@
       --button-inactive: #7a3b13;
       --button-inactive-dark: #3a1d08;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -82,10 +78,7 @@
       line-height:1.45;
       transition: background 0.3s, color 0.3s;
     }
-
     a{color:inherit}
-
-    /* HEADER */
     .site-header{
       position:relative;
       width:100%;
@@ -104,8 +97,6 @@
       background: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03));
       pointer-events:none;
     }
-
-    /* Hakkımızda yazısı */
     .ulasim-logo {
       position: absolute;
       top: 20px;
@@ -128,8 +119,6 @@
       color: #b46145;
       text-shadow: 0 2px 10px rgba(0,0,0,0.13);
     }
-
-    /* Menü ve tema switch */
     .menu-switch-wrap {
       position: absolute;
       top: 18px;
@@ -213,8 +202,6 @@
       color: var(--icon-color);
       transition: color 0.3s;
     }
-
-    /* Tema Switch (iphone tarzı) */
     .theme-switch-btn {
       display: flex;
       align-items: center;
@@ -270,8 +257,6 @@
       letter-spacing: 1px;
       user-select: none;
     }
-
-    /* Arama kutusu ortada */
     .header-search-center {
       position: absolute;
       left: 50%;
@@ -315,8 +300,6 @@
       flex-shrink: 0;
       display: block;
     }
-
-    /* Arama öneri kutusu */
     .search-suggestions {
       position: absolute;
       left: 0;
@@ -354,8 +337,6 @@
       background: rgba(184,109,77,0.09);
       color: #b86d4d;
     }
-
-    /* Logo kutucuğu (orta üstte) */
     .logo-card{
       position:absolute; left:50%; transform:translateX(-50%);
       top:100px; z-index:15;
@@ -369,8 +350,6 @@
     }
     .logo-card h1{font-family:'Great Vibes', cursive; font-size:46px; color:#b46145; margin:0}
     .logo-card .sub{font-family:'Playfair Display', serif; font-size:11px; color:#c8a08a; letter-spacing:2px}
-
-    /* Hakkımızda içerik başlıkları ve balonları */
     .about-section-container {
       width: 100%;
       max-width: 900px;
@@ -378,7 +357,7 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
-      margin-top: 80px; /* YUKARI ÇEKMEK İÇİN DEĞERİ AZALT */
+      margin-top: 80px;
       margin-bottom: 60px;
       padding: 0 12px;
     }
@@ -390,7 +369,7 @@
       letter-spacing: 1px;
       margin-bottom: 10px;
       margin-top: 0;
-      text-align: center;   /* Ortala */
+      text-align: center;
       padding-left: 0;
     }
     .about-bubble {
@@ -411,62 +390,132 @@
       padding: 0;
       margin: 0 0 0 0;
     }
-    .about-bubble .team-list {
+    /* Ekip kutuları */
+    .team-section {
+      margin-bottom: 28px;
+    }
+    .team-title {
+      background: var(--button-orange);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 8px 28px;
+      display: inline-block;
       margin-bottom: 18px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(184,109,77,0.08);
     }
-    .about-bubble .team-list li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* İsim solda, ikonlar sağda */
-    gap: 18px;
-    margin-bottom: 18px;
-    font-size: 21px; /* 1.5 katı büyüklük */
-    font-weight: 500;
-    min-height: 44px;
+    .team-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 32px;
+      margin: 0;
+      padding: 0;
     }
-
-    .about-bubble .team-icons {
-    display: flex;
-    gap: 36px; /* ikonlar arası mesafe artırıldı */
-    align-items: center;
-    justify-content: flex-end; /* ikonları sağa yasla */
-    min-width: 220px;
+    .team-member {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(245, 235, 220, 0.45);
+      border-radius: 10px;
+      padding: 12px 18px;
+      box-shadow: 0 2px 10px rgba(184,109,77,0.06);
+      min-width: 220px;
+      flex: 1 1 260px;
+      max-width: 320px;
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      /* Koyu mod için geçersiz kılınacak */
     }
-
-    .about-bubble .team-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #fff7f1;
-    border: 2px solid #e9cfa2;
-    transition: background 0.2s, border 0.2s, transform 0.2s;
-    text-decoration: none;
-    width: 44px;
-    height: 44px;
-    padding: 0;
+    .team-photo {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e9a15a;
+      background: #fff;
+      flex-shrink: 0;
+      margin-bottom: 8px;
+      align-self: center;
     }
-
-    .about-bubble .team-icons a:hover {
-    background: #e9a15a;
-    border: 2px solid #b86d4d;
-    transform: scale(1.12);
+    .team-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      width: 100%;
     }
-
-    .about-bubble .team-icons img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-    display: block;
+    .team-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #b86d4d;
+      transition: color 0.3s;
     }
-
-    body.dark .about-bubble .team-icons a {
-    background: #232323;
-    border: 2px solid #444;
+    .team-role {
+      font-size: 14px;
+      color: #2f2a25;
+      transition: color 0.3s;
     }
-    body.dark .about-bubble .team-icons a:hover {
-    background: #b46145;
-    border: 2px solid #e9a15a;
+    .team-uni {
+      font-size: 12px;
+      color: #7e6f60;
+      transition: color 0.3s;
+    }
+    .team-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+      align-self: flex-start;
+    }
+    .team-link-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      transition: background 0.18s;
+    }
+    .team-link-btn:hover {
+      background: #ffe3c2;
+    }
+    .team-link-btn svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    .team-link-btn img {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    /* KOYU MOD EKİP KUTULARI */
+    body.dark .team-member {
+      background: rgba(40,40,40,0.85);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    }
+    body.dark .team-name {
+      color: #ffb36b;
+    }
+    body.dark .team-role {
+      color: #fff;
+    }
+    body.dark .team-uni {
+      color: #bdbdbd;
+    }
+    body.dark .team-link-btn:hover {
+      background: #3a1d08;
+    }
+    body.dark .team-photo {
+      background: #232323;
+      border: 2px solid #e9a15a;
     }
     @media (max-width: 700px) {
       .about-section-container {
@@ -481,14 +530,15 @@
         padding: 18px 8px 18px 8px;
         font-size: 16px;
       }
+      .team-list {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .team-member {
+        min-width: 0;
+        max-width: 100%;
+      }
     }
-    .team-separator {
-  border: 0;
-  border-bottom: 2px solid #e9a15a;
-  margin: 18px 40px 18px 40px; /* üst-alt ve sağ-sol boşluk */
-  height: 0;
-}
-    /* İletişim formu stilleri */
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -565,16 +615,10 @@
     }
   </style>
 </head>
-
 <body>
-
-  <!-- Sol üstte Hakkımızda -->
   <div class="ulasim-logo">Hakkımızda</div>
-
-  <!-- Menü ve tema switch -->
   <div class="menu-switch-wrap">
     <button class="menu-btn" id="menuBtn" aria-label="Menü">
-      <!-- 3 nokta SVG -->
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <circle cx="6" cy="14" r="2.5" fill="currentColor"/>
         <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
@@ -590,11 +634,7 @@
       </button>
     </div>
   </div>
-
-  <!-- ========== HEADER ========== -->
   <header class="site-header" role="banner">
-
-    <!-- Ortada arama kutusu -->
     <div class="header-search-center" aria-hidden="false">
       <div class="search-pill" role="search" aria-label="Site içi arama">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -605,19 +645,13 @@
         <ul class="search-suggestions" id="searchSuggestions"></ul>
       </div>
     </div>
-
-    <!-- Ortadaki logo kutusu -->
     <div class="logo-card" role="img" aria-label="Kırşehir logo">
       <h1>KIRŞEHİR</h1>
       <div class="sub">Keşfetmenin sade güzelliği</div>
     </div>
-
   </header>
-
-  <!-- ======= Hakkımızda Balonları ======= -->
   <main>
     <div class="about-section-container">
-      <!-- Vizyonumuz başlık ve balon -->
       <div class="about-title">Vizyonumuz</div>
       <section class="about-bubble">
         <p>
@@ -633,112 +667,236 @@
           Sonuç olarak, vizyonumuz; Kaman’da yaşayan öğrenciler, şehre gelen ziyaretçiler ve potansiyel öğrenciler için bilgiye erişimi kolay, rehberlik eden ve öğretici bir dijital platform oluşturmaktır. Bu sayede hem Kaman’ın tanıtımını yapmak hem de şehre dair pratik ve güncel bilgileri sunmak istiyoruz.
         </p>
       </section>
-      <!-- Ekibimiz başlık ve balon -->
       <div class="about-title">Ekibimiz ve Emeği Geçenler</div>
       <section class="about-bubble">
-        <ul class="team-list">
-          <li>
-            Hümeyra
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Beyza
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Efsun
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>   
-          <hr class="team-separator">    
-          <li>
-            İlayda
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Berat
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Şermin
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Zümra
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Sıla
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Yağmur
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Şevket
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-          <hr class="team-separator">
-          <li>
-            Onur
-            <span class="team-icons">
-            <a href="mailto:ornek@mail.com" target="_blank"><img src="mail.svg" alt="Mail" style="width:44px;height:44px;"></a>
-            <a href="https://github.com/kullanici" target="_blank"><img src="github.svg" alt="GitHub" style="width:44px;height:44px;"></a>
-            <a href="https://linkedin.com/in/kullanici" target="_blank"><img src="linkedin.svg" alt="LinkedIn" style="width:44px;height:44px;"></a>
-            </span>
-          </li>
-        </ul>
+        <!-- Yönetici -->
+        <div class="team-section">
+          <span class="team-title">Yönetici</span>
+          <div class="team-list">
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Hümeyra Tuncer" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Hümeyra Tuncer</div>
+                <div class="team-role">Proje Yöneticisi</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tasarım Ekibi -->
+        <div class="team-section">
+          <span class="team-title">Tasarım Ekibi</span>
+          <div class="team-list">
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Beyzanur Bozkır" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Beyzanur Bozkır</div>
+                <div class="team-role">Arayüz Tasarımı</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - Grafik Tasarım</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Efsun Soyad" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Efsun Soyad</div>
+                <div class="team-role">Mobil Tasarım</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - Grafik Tasarım</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Programcılar -->
+        <div class="team-section">
+          <span class="team-title">Programcılar</span>
+          <div class="team-list">
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Zeynep Özdemir" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Zeynep Özdemir</div>
+                <div class="team-role">Web Geliştirme</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Yağmur Güler" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Yağmur Güler</div>
+                <div class="team-role">Veritabanı Yönetimi</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Zümranur Tiken" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Zümranur Tiken</div>
+                <div class="team-role">Frontend</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="İlayda Çınar" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">İlayda Çınar</div>
+                <div class="team-role">Backend</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Sıla Soyad" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Sıla Soyad</div>
+                <div class="team-role">API Entegrasyon</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Şevket Nurkan Çamurluoğlu" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Şevket Nurkan Çamurluoğlu</div>
+                <div class="team-role">Test &amp; Hata Takibi</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="Hüseyin Berat Bayram" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">Hüseyin Berat Bayram</div>
+                <div class="team-role">Mobil Geliştirme</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img src="profilfoto.png" alt="İbrahim Onur Arlı" class="team-photo" />
+              <div class="team-info">
+                <div class="team-name">İbrahim Onur Arlı</div>
+                <div class="team-role">Veritabanı Yönetimi</div>
+                <div class="team-uni">Kırşehir Ahi Evran Üniversitesi - YBS</div>
+              </div>
+              <div class="team-links">
+                <a class="team-link-btn" href="#" title="GitHub" target="_blank">
+                  <img src="github.svg" alt="GitHub" />
+                </a>
+                <a class="team-link-btn" href="#" title="LinkedIn" target="_blank">
+                  <img src="linkedin.svg" alt="LinkedIn" />
+                </a>
+                <a class="team-link-btn" href="mailto:ornekmail@ornek.com" title="E-posta">
+                  <img src="mail.svg" alt="E-posta" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-
-      <!-- İletişim Başlık ve Form -->
       <div class="about-title">İletişim</div>
       <section class="about-bubble">
         <form class="contact-form" autocomplete="off">
@@ -759,7 +917,6 @@
       </section>
     </div>
   </main>
-
   <script>
     // Menü açılır kapanır ve tema değiştirici
     (function(){
@@ -769,8 +926,6 @@
       const iphoneSwitch = document.getElementById('iphoneSwitch');
       const themeSwitchLabel = document.getElementById('themeSwitchLabel');
       const body = document.body;
-
-      // Tema değiştirici fonksiyonu
       function setTheme(dark) {
         if(dark){
           body.classList.add('dark');
@@ -784,11 +939,7 @@
           localStorage.setItem('theme', 'light');
         }
       }
-
-      // Başlangıçta tema kontrolü (her zaman açık modda başlat)
       setTheme(localStorage.getItem('theme') === 'dark');
-
-      // Menü aç/kapat
       menuBtn.addEventListener('click', function(e){
         e.stopPropagation();
         menuDropdown.classList.toggle('show');
@@ -798,14 +949,10 @@
           menuDropdown.classList.remove('show');
         }
       });
-
-      // Tema değiştir butonu (iphone switch)
       themeToggleBtn.addEventListener('click', function(e){
         setTheme(!body.classList.contains('dark'));
         menuDropdown.classList.remove('show');
       });
-
-      // Klavye erişimi
       menuBtn.addEventListener('keydown', function(e){
         if(e.key === 'Enter' || e.key === ' '){
           e.preventDefault();
@@ -820,10 +967,8 @@
         }
       });
     })();
-
     // Arama kutusu, öneriler ve kart modalı
     (function(){
-      // Arama önerileri
       const search = document.querySelector('#site-search');
       const pill = document.querySelector('.search-pill');
       const suggestions = document.getElementById('searchSuggestions');
@@ -836,9 +981,7 @@
         { name: "Gezilecek Yerler", url: "gezilecek-yerler.html" },
         { name: "Ulaşım", url: "index.html" }
       ];
-
       let activeIndex = -1;
-
       function showSuggestions(filter = "") {
         const val = filter.trim().toLowerCase();
         let filtered = routes.filter(r => r.name.toLowerCase().includes(val));
@@ -852,13 +995,10 @@
         suggestions.classList.add("show");
         activeIndex = 0;
       }
-
       function hideSuggestions() {
         suggestions.classList.remove("show");
         activeIndex = -1;
       }
-
-      // Arama kutusuna focus/blur
       if(search && pill){
         search.addEventListener('focus', ()=>{
           pill.style.boxShadow = '0 12px 32px rgba(24,14,12,0.12)';
@@ -868,25 +1008,20 @@
         search.addEventListener('blur', ()=>{
           pill.style.boxShadow = '';
           pill.style.transform = '';
-          setTimeout(hideSuggestions, 120); // tıklama için küçük gecikme
+          setTimeout(hideSuggestions, 120);
         });
         search.addEventListener('input', ()=>{
           showSuggestions(search.value);
         });
       }
-
-      // Öneri tıklama
       suggestions.addEventListener('mousedown', function(e){
         if(e.target.tagName === "LI" && e.target.dataset.url){
           window.location.href = e.target.dataset.url;
         }
       });
-
-      // Klavye ile seçim
       search.addEventListener('keydown', function(e){
         const items = Array.from(suggestions.querySelectorAll('li[data-url]'));
         if(!suggestions.classList.contains('show') || items.length === 0) return;
-
         if(e.key === "ArrowDown"){
           e.preventDefault();
           activeIndex = (activeIndex + 1) % items.length;
@@ -900,20 +1035,18 @@
           if(activeIndex >= 0 && items[activeIndex]){
             window.location.href = items[activeIndex].dataset.url;
           } else {
-            // Yazılan metinle eşleşen varsa ona git
             const val = search.value.trim().toLowerCase();
             const found = routes.find(r => r.name.toLowerCase() === val);
             if(found) window.location.href = found.url;
           }
         }
       });
-
     })();
   </script>
-<footer style="text-align:center; font-family: inherit; color:#ff6600; margin:40px 0;">
-  <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
-  © 2025 Tüm hakları saklıdır. Hüseyin Berat Bayram
-  <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
-</footer>
+  <footer style="text-align:center; font-family: inherit; color:#ff6600; margin:40px 0;">
+    <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
+    © 2025 Tüm hakları saklıdır. Hüseyin Berat Bayram
+    <hr style="border:none; border-top:2px solid #ff6600; margin:10px 0;">
+  </footer>
 </body>
 </html>
